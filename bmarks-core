@@ -1,0 +1,23 @@
+#!/bin/fish
+if [ (count $argv) -ne 2 ]
+	echo "Usage: bmark CATEGORY URL"
+	exit
+end
+
+set title (wget -qO- "$argv[2]" | hxselect -s '\n' -c  'title' 2>/dev/null)
+
+# echo $title # Check. This works.
+
+if [ -f $argv[1].html ]
+	echo "<a href=$argv[2]>$title</a><br>
+	" >> $argv[1].html
+else
+ 	echo "<!DOCTYPE html>
+ 	<html>
+ 	<head>
+ 	<title>Bookmarks for $argv[1].</title>
+ 	</head>
+ 
+ 	<a href=$argv[2]>$title</a><br>
+	" >> $argv[1].html
+end
