@@ -15,7 +15,7 @@ The purpose of this program is to keep track of your bookmarks in a browser-inde
 
 ### Usage
 
-'bmarks-core CATEGORY URL'
+`bmarks-core CATEGORY URL`
 
 This adds a link to URL at the end of CATEGORY.html. The title of the link is the same as the title of that webpage. If the file doesn't exist, it is created.
 
@@ -23,10 +23,10 @@ This adds a link to URL at the end of CATEGORY.html. The title of the link is th
 
 If you're using ws, you can use the following function for quick access:
 
-'''
+```
 function bmarks
 	set category (echo $ws | cut -d "/" -f 5)
 	set url (xclip -out)
 	bmarks-core $category $url
 end
-'''
+```
