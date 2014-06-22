@@ -30,3 +30,10 @@ function bmarks
 	bmarks-core $category $url
 end
 ```
+
+### Dependencies
+
+* fish
+* html-xml-utils
+
+You don't need to actually be using the fish shell. It's just needed to interpret the script.
